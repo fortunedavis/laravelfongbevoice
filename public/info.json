@@ -1,0 +1,11 @@
+{
+    "messages": {
+        "1": "Je suis le premier message. Ce texte est un exemple de message en français qui peut être utilisé pour tester l'affichage de longs textes dans un format JSON. Il est important de s'assurer que tout le contenu est correctement encodé et interprété.",
+        "2": "Voici le deuxième message. Il contient également du texte en français. L'objectif est de fournir un exemple de contenu textuel plus long, afin d'observer comment il est géré dans une structure JSON.",
+        "3": "Le troisième message est encore plus long que les précédents. Ce message pourrait contenir des informations détaillées, des descriptions, ou même des paragraphes entiers de texte en français. Cela permet de voir si l'outil ou l'application utilisée pour lire ce fichier JSON est capable de gérer de grandes quantités de texte sans problème.",
+        "4": "Le quatrième message continue dans la même veine, avec un texte encore plus long. Il est important de noter que les longs textes en français peuvent inclure des caractères spéciaux tels que les accents (é, è, à, etc.), et qu'il est crucial que ces caractères soient correctement encodés en UTF-8 pour éviter tout problème de lecture.",
+        "5": "Enfin, le cinquième message clôt cette série d'exemples. Il est conçu pour tester les limites de la structure JSON en ce qui concerne le stockage et la manipulation de longs textes. Ce texte pourrait également inclure des phrases complexes, des citations, ou d'autres éléments textuels qui sont couramment utilisés dans la langue française.",
+        "6": "olla, le cinquième message clôt cette série d'exemples. Il est conçu pour tester les limites de la structure JSON en ce qui concerne le stockage et la manipulation de longs textes. Ce texte pourrait également inclure des phrases complexes, des citations, ou d'autres éléments textuels qui sont couramment utilisés dans la langue française.",
+        "7": "Elohim, le cinquième message clôt cette série d'exemples. Il est conçu pour tester les limites de la structure JSON en ce qui concerne le stockage et la manipulation de longs textes. Ce texte pourrait également inclure des phrases complexes, des citations, ou d'autres éléments textuels qui sont couramment utilisés dans la langue française."
+    }
+}
