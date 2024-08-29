@@ -9,7 +9,19 @@ use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\MessageController;
 
 class RecordController extends Controller
-{
+{   
+
+    public function update(Request $request){
+        $record = Record::findOrFail($request->input('record_id'));
+
+        $record->state = $request->input("state");
+
+        $record->save();
+
+        return response()->json(['success' => 'Validated successfully',
+    "other"=>$record], 200);
+
+    }
     
     public function upload(Request $request)
     {   

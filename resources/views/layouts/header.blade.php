@@ -30,27 +30,55 @@
                     <li>
                         <a href="#" class="nav-link">Donation</a>
                     </li>
-                    
+                    @guest
                     @if (Route::has('login'))
                         @auth
-
+                            @if (request()->is('admin/home'))
+                                {{Auth::user()->name}}
+                                
+                                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    Logout
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+                            @else
+                                <a href="{{ route('admin.home') }}" class="nav-link">
+                                    {{Auth::user()->name}}
+                                    <i class="fi fi-rr-user"></i>
+                                </a>
+                            @endif
                         @else
                             @if (Route::has('register'))
                                 <li>
-                                    <a href="#" class="nav-link">
+                                    <a href="#" class="nav_register nav-link">
                                         Sign up
                                         <i class="fi fi-rr-user"></i>
                                     </a>
                                 </li>
                             @endif
                             <li>
-                                <a href="{{ route('login') }}" class="nav-link">
+                                <a href="{{ route('login') }}" class="nav_login nav-link">
                                     Log In
                                     <i class="fi fi-rr-address-card"></i>
                                 </a>
                             </li>
                         @endauth
                     @endif
+                    @else
+                            <li>
+                                <a href="{{ route('logout') }}" class="nav-link"
+                                    onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    
+                                    Log out
+                                    <i class="fi fi-rr-address-card"></i>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </a>
+                            </li>
+                    @endguest
                 </ul>
             </div>
         </nav>
@@ -73,18 +101,29 @@
             @if (Route::has('login'))
                 <div class="nav_elements right">
                     @auth
-                        <a href="{{ route('register') }}" class="nav-link">
-                            Admin
-                            <i class="fi fi-rr-user"></i>
-                        </a>
+                        @if (request()->is('admin/home'))
+                            {{Auth::user()->name}}
+                            
+                            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                Logout
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
+                        @else
+                            <a href="{{ route('admin.home') }}" class="nav-link">
+                                {{Auth::user()->name}}
+                                <i class="fi fi-rr-user"></i>
+                            </a>
+                        @endif
                     @else
                     @if (Route::has('register'))
-                        <a href="{{ route('register') }}" class="nav-link">
+                        <a href="#" class="nav_register nav-link">
                             Sign up
                             <i class="fi fi-rr-user"></i>
                         </a>
                     @endif
-                    <a href="{{ route('login') }}" class="nav-link">
+                    <a href="#" class="nav_login nav-link">
                         Log In
                         <i class="fi fi-rr-address-card"></i>
                     </a>

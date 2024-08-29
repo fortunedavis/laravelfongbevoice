@@ -49,3 +49,53 @@ fimenuburger.addEventListener("click",()=>{
  });
 
 
+ let myform = document.getElementById("myForm");
+ let close = document.getElementById("close");
+ 
+ // myform.addEventListener("click",()=>{
+ //   document.getElementById("myForm").style.display = "none";
+ // });
+ 
+ close.addEventListener("click",()=>{
+   document.getElementById("myForm").style.display = "none";
+ });
+ 
+ let navlogin =  document.querySelectorAll(".nav_login");
+ navlogin.forEach(el => {
+   el.addEventListener("click",()=>{
+     document.getElementById("myForm").style.display = "block";
+   });
+ });
+ 
+ let registerclose = document.getElementById("register_close");
+ registerclose.addEventListener("click",()=>{
+   document.getElementById("registerForm").style.display = "none";
+ });
+ 
+ let navregister =  document.querySelectorAll(".nav_register");
+ navregister.forEach(el => {
+    console.log("regsiter")
+   el.addEventListener("click",()=>{
+     document.getElementById("registerForm").style.display = "block";
+   });
+ });
+ 
+ 
+ 
+//  let registerform  = document.getElementById("reg_form");
+ 
+//  document.getElementById("register_submit").addEventListener('click',()=>{
+// //    registerform.submit();
+//    console.log("register")
+//    console.log(registerform)
+//  });
+ 
+ 
+//  let connexionform = document.getElementById("connexion_form");
+ 
+//  document.getElementById("connexion_submit").addEventListener('click',()=>{
+//    connexionform.submit();
+// //    console.log("connexion")
+ 
+//  });
+
