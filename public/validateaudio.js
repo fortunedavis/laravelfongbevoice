@@ -1,12 +1,12 @@
-let valider = document.getElementById("valider");
-let rejeter = document.getElementById("rejeter");
+// let valider = document.getElementById("valider");
+// let rejeter = document.getElementById("rejeter");
 
 let validateButton = document.getElementsByClassName("valider")
 let validateButtonsArray = Array.from(validateButton);
 validateButtonsArray.forEach(button=>{
     button.addEventListener("click",()=>{
         let audioId = button.getAttribute('data-audio-id');
-        validate(1,audioId)
+        validate("valid",audioId)
         console.log(audioId)
         let divCard = button.closest(".admin_message")
          if(divCard){
@@ -21,7 +21,7 @@ let rejectedButtonsArray = Array.from(rejectedButton);
 rejectedButtonsArray.forEach(button=>{
     button.addEventListener("click",()=>{
         let audioId = button.getAttribute('data-audio-id');
-        validate(2,audioId)
+        validate("rejected",audioId)
         let divCard = button.closest(".admin_message")
          if(divCard){
             divCard.remove();

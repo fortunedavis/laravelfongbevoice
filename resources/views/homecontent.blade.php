@@ -49,37 +49,31 @@
                     <p>Auteurs</p>
                     <div class="author_card_text animate__animated  animate__bounceInDown animate__delay-1s">
                         <div class="image_card">
-                            <img src="3.jpg" alt="">
+                            <img src="{{asset("fortune_kponou.jpeg")}}" alt="">
                         </div>
                         <div class="author_text">
                             <p>
-                             L'Afrique compte plus de 2000 langues et pourtant 
-                             celles-ci sont parmi les moins représentées dans 
-                             la recherche du traitement automatique de la voix.
+                             Kponou D. Fortuné PhD student in Natural Language Processing / AI at the University of Abomey-Calavi.
                             </p>
                         </div>
                     </div>
                     <div class="author_card_text animate__animated  animate__bounceInDown animate__delay-2s">
                         <div class="image_card">
-                            <img src="3.jpg" alt="">
+                            <img src="{{asset("frejus.png")}}" alt="">
                         </div>
                         <div class="author_text">
                             <p>
-                             L'Afrique compte plus de 2000 langues et pourtant 
-                             celles-ci sont parmi les moins représentées dans 
-                             la recherche du traitement automatique de la voix.
+                                Fréjus Lalèyè Fréjus Dr. in AI. CTO at Opescidia/ France.
                             </p>
                         </div>
                     </div>
                     <div class="author_card_text animate__animated  animate__bounceInDown animate__delay-3s">
                         <div class="image_card">
-                            <img src="3.jpg" alt="">
+                            <img src="{{asset("prof_ezin.jpg")}}" alt="">
                         </div>
                         <div class="author_text">
                             <p>
-                             L'Afrique compte plus de 2000 langues et pourtant 
-                             celles-ci sont parmi les moins représentées dans 
-                             la recherche du traitement automatique de la voix.
+                             Eugène C. Ezin Professor at the University of Abomey-Calavi. Director of IFRI.
                             </p>
                         </div>
                     </div>

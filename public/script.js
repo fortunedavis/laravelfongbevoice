@@ -38,8 +38,8 @@ const fimenuburger = document.getElementById("fi_menu_burger_mobile")
 let navelements_value = navelements.style.display
 
 fimenuburger.addEventListener("click",()=>{
-
-    if (navelements.style.display == "none"){
+    // console.log("okkk")
+    if (getComputedStyle(navelements).display === "none") {
         navelements.style.display = "block";
     }else{
      navelements.style.display = "none";
@@ -64,6 +64,7 @@ fimenuburger.addEventListener("click",()=>{
  navlogin.forEach(el => {
    el.addEventListener("click",()=>{
      document.getElementById("myForm").style.display = "block";
+     navelements.style.display = "none";
    });
  });
  
@@ -74,28 +75,13 @@ fimenuburger.addEventListener("click",()=>{
  
  let navregister =  document.querySelectorAll(".nav_register");
  navregister.forEach(el => {
-    console.log("regsiter")
    el.addEventListener("click",()=>{
      document.getElementById("registerForm").style.display = "block";
+     navelements.style.display = "none";
    });
  });
  
  
  
-//  let registerform  = document.getElementById("reg_form");
- 
-//  document.getElementById("register_submit").addEventListener('click',()=>{
-// //    registerform.submit();
-//    console.log("register")
-//    console.log(registerform)
-//  });
- 
- 
-//  let connexionform = document.getElementById("connexion_form");
- 
-//  document.getElementById("connexion_submit").addEventListener('click',()=>{
-//    connexionform.submit();
-// //    console.log("connexion")
- 
-//  });
+
 

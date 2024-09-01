@@ -7,7 +7,7 @@
                             Enregistrements
                             <i class="fi fi-rr-home"></i>
                         </a>
-                        <a href="">
+                        <a href="{{route("admin.sentences")}}">
                             Phrases
                             <i class="fi fi-rr-home"></i>
                         </a>
@@ -15,8 +15,14 @@
                             Users
                             <i class="fi fi-rr-home"></i>
                         </a>
-                        <a href="" class="">
-                            Settings
-                            <i class="fi fi-rr-home"></i>
+                        @role("superadmin")
+                        <a href="{{route("downloadfiles")}}" class="">
+                            Telecharger Audios
+                            <i class="fi fi-rr-download"></i>
+                        </a>
+                        @endrole
+                        <a href="{{ route('export') }}">
+                            Export CSV
+                            <i class="fi fi-rr-download"></i>
                         </a>
                 </div>

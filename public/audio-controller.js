@@ -197,6 +197,16 @@ async function main () {
 
         updateButtonStates(audioList, maxRecordings, buttonStart, submitButton);
 
+        let successMessage = document.getElementById('success-message');
+        successMessage.textContent = "Enregistré avec succès";
+        successMessage.style.display = 'block';
+        setTimeout(()=>{
+            successMessage.classList.add("fade-in");
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+            }, 1100);
+        },2000);
+
       });
       
     } catch (err) {
@@ -214,7 +224,7 @@ async function main () {
 
     } else {
         buttonStart.disabled = false;
-        submitButton.disabled = true;
+        // submitButton.disabled = true;
         skipedButton.disabled= false;
         skipedButton.style.display ="block";
 
@@ -318,14 +328,17 @@ async function replayMessage(id){
 
 async function displayMessage(fn) {
   const message = await fn();
-  if (message) {
+  if (!message.length == 0) {
     userTextElement.textContent = message[0]['message'];
-    // console.log("'checking")
     recordedMessageList.push(message)
-    // console.log(recordedMessageList)
-
+    console.log(message)
+    console.log("asyn")
   } else {
-    userTextElement.textContent = "No message received.";
+    skipedButton.remove()
+    buttonStart.remove()
+    buttonStop.remove()
+    submitButton.remove()
+    userTextElement.textContent = "Evoooo!!";
   }
 }
 
@@ -346,36 +359,6 @@ function toSend(audio,message_id){
   }
 }
 
-
-let myform = document.getElementById("myForm");
-let close = document.getElementById("close");
-
-// myform.addEventListener("click",()=>{
-//   document.getElementById("myForm").style.display = "none";
-// });
-
-close.addEventListener("click",()=>{
-  document.getElementById("myForm").style.display = "none";
-});
-
-let navlogin =  document.querySelectorAll(".nav_login");
-navlogin.forEach(el => {
-  el.addEventListener("click",()=>{
-    document.getElementById("myForm").style.display = "block";
-  });
-});
-
-let registerclose = document.getElementById("register_close");
-registerclose.addEventListener("click",()=>{
-  document.getElementById("registerForm").style.display = "none";
-});
-
-let navregister =  document.querySelectorAll(".nav_register");
-navregister.forEach(el => {
-  el.addEventListener("click",()=>{
-    document.getElementById("registerForm").style.display = "block";
-  });
-});
 
 
 

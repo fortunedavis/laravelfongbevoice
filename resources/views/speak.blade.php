@@ -1,6 +1,7 @@
 @extends('home')
 @section('content')
             <div class="register_card">
+            <div id="success-message" class="alert alert-success" style="display:none;"></div>
 
                 <div class="principal">
                     <div class="register_text" id="register_text">

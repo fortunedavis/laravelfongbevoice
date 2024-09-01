@@ -18,26 +18,24 @@
 </head>
 <body>
     @include('layouts.header')
-    
     <div class="form_veil" id="myForm">
       <div class="form form-popup" >
           <form method="POST" id="connexion_form" action="{{ route('login') }}" class="form-container">
             @csrf
             <h4>Login</h4>
-            <label for="email"><b>Email</b></label>
+            <label id="i_email" for="email"><b>Email</b></label>
             <input type="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
             
-            <label for="psw"><b>Password</b></label>
+            <label id="i_password" for="psw"><b>Password</b></label>
             <input type="password" name="password" placeholder="Enter Password" name="psw" required autocomplete="current-password">
             
-            <label for="psw"><b>Remember Me</b></label>
+            <label id="i_checkbox" for="psw"><b>Remember Me</b></label>
             <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>
             
             <div class="form_button">
-                <button type="submit" id="connexion_submit" class="btn">Go!</button>
                 <button type="button" class="btn cancel" id="close" >Fermer</button>
+                <button type="submit" id="connexion_submit" class="btn">Go!</button>
             </div>
-               
         </form>
       </div>
     </div>
@@ -46,8 +44,8 @@
       <div class="form form-popup" >
           <form method="POST"  id="reg_form"action="{{ route('register') }}" class="form-container">
               @csrf
-              <label for="name"><b>Nom Et Prénom</b></label>
-              <input id="name" type="text" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+              <label  for="name"><b>Nom Et Prénom</b></label>
+              <input id="name" type="text" name="name" value="{{ old('name') }}"  required autocomplete="name" autofocus>
 
               <label for="email"><b>Email</b></label>
               <input id="email" type="email"  name="email" value="{{ old('email') }}" required autocomplete="email">
@@ -56,17 +54,13 @@
               <input id="password" type="password"  name="password" required autocomplete="new-password">
                         
               <label for="psw-conf"><b>Confirmer Password</b></label>
-              <input id="password-confirm" type="password"  required autocomplete="new-password">
+              <input id="password-confirm" name="password_confirmation" type="password"   required autocomplete="new-password">
 
               <div class="form_button">
-                  <button type="submit" id="register_submit" class="btn">Login</button>
                   <button type="button" class="btn cancel" id="register_close">Close</button>
+                  <button type="submit" id="register_submit" class="btn">Register</button>
               </div>
           </form>
-               
-           
-
-        </form>
       </div>
     </div>
 
@@ -75,10 +69,8 @@
     </main>
 
    @include('layouts.footer')
+   @include('sweetalert::alert')
     <script src="{{asset("script.js")}}"></script>
-    <script src="{{asset("validateaudio.js")}}"></script>
-    <!-- <script src="{{asset("audio-controller.js")}}"></script> -->
     
-
 </body>
 </html>

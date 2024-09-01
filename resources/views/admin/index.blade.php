@@ -7,4 +7,5 @@
           @yield("admin")
      </div>
 </div>
+@yield("javascript")
 @stop

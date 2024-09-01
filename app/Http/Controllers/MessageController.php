@@ -30,23 +30,17 @@ class MessageController extends Controller
           return redirect()->route('message.index')
             ->with('success', 'message created successfully.');
         }
-
+    
     public function update(Request $request, $id)
         {
-          
-          $post = Message::find($id);
-
-          if (!$post) {
-              return response()->json(['error' => 'Post not found'], 404);
-          }
-
-          $post->status = 0;
-
+          $post  =  Message::findOrFail($id);
+          $post->status = 1; 
           $post->save();
-
           return response()->json(['success' => 'Post updated successfully'], 200);
 
         }
+
+    
 
     public function edit($id)
         {

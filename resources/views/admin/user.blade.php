@@ -7,7 +7,6 @@
             <th class="text-left">Nom</th>
             <th class="text-left">Audio recorded</th>
             <th class="text-left">recorded accepted</th>
-            <th class="text-left">Validateur</th>
             <th class="text-left">Actions</th>
         </tr>
     </thead>
@@ -18,14 +17,11 @@
                         {{ $user->name}}
                     </td>
                     <td class="text-left">
-                        <p>10 Audios </p>
-                        <p>5 Validés </p>
+                        <p>{{$user->records_count}} Audios</p>
                     </td>
-                    <td class="text-left">
-                        <p>5 Validés </p>
-                    </td>
-                    <td>
 
+                    <td>
+                        <p>{{$user->validated_records_count}} Validés </p>
                     </td>
                     <td class="text-left">
                         <button>modifier</button>
@@ -40,7 +36,7 @@
 
 <div class="admin_user_right">
       <div class="form form-popup" >
-          <form method="POST"  id="reg_form"action="{{ route('register') }}" class="form-container">
+          <form method="POST"  id="reg_form"action="{{ route('admin.register') }}" class="form-container">
               @csrf
               <label for="name"><b>Nom et prénoms</b></label>
               <input id="name" type="text" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -50,9 +46,16 @@
                         
               <label for="psw"><b>Password</b></label>
               <input id="password" type="password"  name="password" required autocomplete="new-password">
-                        
-              <label for="psw-conf"><b>Confirmer Password</b></label>
-              <input id="password-confirm" type="password"  required autocomplete="new-password">
+
+              <label for="role"><b>Select Role</b></label>
+                <select name="role" id="role" required>
+                    @foreach($roles as $role)
+                        <option value="{{ $role->name }}">{{ $role->name }}</option>
+                    @endforeach
+                </select>
+                
+              <!-- <label for="psw-conf"><b>Confirmer Password</b></label>
+              <input id="password-confirm" type="password"  required autocomplete="new-password"> -->
 
               <div class="form_button">
                   <button type="submit" id="register_submit" class="btn">Valider</button>
