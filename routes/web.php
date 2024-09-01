@@ -19,9 +19,9 @@ use App\Http\Middleware\AdminSuperadminMiddleware;
 |
 */
 
-Route::get('/', function () {
-    return view('homecontent');
-});
+
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('homecontent');
+
 
 Route::get('/speak',function(){
     return view('speak');

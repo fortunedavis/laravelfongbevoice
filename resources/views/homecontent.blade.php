@@ -63,7 +63,7 @@
                         </div>
                         <div class="author_text">
                             <p>
-                                Fréjus Lalèyè Fréjus Dr. in AI. CTO at Opescidia/ France.
+                                Fréjus Lalèyè Fréjus Dr. in AI. CTO at Ospedicia/ France.
                             </p>
                         </div>
                     </div>

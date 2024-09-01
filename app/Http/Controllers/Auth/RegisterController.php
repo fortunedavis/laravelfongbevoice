@@ -7,6 +7,8 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -30,7 +32,6 @@ class RegisterController extends Controller
      */
     protected $redirectTo = '/';
 
-    
     /**
      * Create a new controller instance.
      *
@@ -65,15 +66,22 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
 
-        User::create([
+        return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    }
 
-        // session()->flash('success', 'Welcome back, ' . $user->name . '!');
+    public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
 
-        // Redirect to the intended URL with a success message
-        // return redirect()->intended($this->redirectTo);
+        $user = $this->create($request->all());
+
+        Auth::login($user);
+
+        return redirect()->route('homecontent')
+            ->with('success', 'Votre compte a été bien créé'); 
     }
 }
