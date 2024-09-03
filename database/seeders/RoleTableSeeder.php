@@ -42,14 +42,13 @@ class RoleTableSeeder extends Seeder
             'password' => Hash::make('RailsAfrica'),
         ]);
 
-        $user = User::factory()->create([
-            'name' => 'admin',
-            'email' => 'admin@admin.com',
-            'password' => Hash::make('admin'),
-        ]);
+        // $user = User::factory()->create([
+        //     'name' => 'admin',
+        //     'email' => 'admin@admin.com',
+        //     'password' => Hash::make('admin'),
+        // ]);
         
-        // $this->command->info('User seeded');
-        $user->assignRole($admin);
+        // $user->assignRole($admin);
         $superadmin_user->assignRole($superadmin);
     }
 }
